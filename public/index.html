@@ -158,8 +158,7 @@
         }
         .img-mes{
             @media (max-width: 445px) {
-                width: 65px;
-                height: 65px;
+                width: 50px;
             }
             width: 48px;
             height: 48px;
@@ -169,12 +168,10 @@
         }
         .img-fb {
             @media (max-width: 445px) {
-                width: 45px;
-                height: 45px;
+                width: 50px;
             }
-            width: 40px;
-            height: 40px;
-            margin-left: 5px;
+            width: 48px;
+            height: 48px;
         }
         .img-left-20 {
             margin-right: 15px;
@@ -183,6 +180,7 @@
             width: 55px;
             height: 55px;
             margin-top: 3px;
+            border-radius: 50% !important;
         }
         .btn-open {
             height: 20px;
@@ -204,6 +202,24 @@
         }
         .mg-l-20{
             margin-left: 20px;
+        }
+        .border-radius-5 {
+            /* border: 1px solid rgba(0, 0, 0, 0.32) !important; */
+            border: 1px solid #00000052 !important;
+            border-radius: 5px;
+            padding: 23px;
+        }
+        .padding-r-l {
+            @media (max-width: 445px) {
+                padding-left: 0px !important;
+                padding-right: 0px !important;
+            }
+            padding-left: 50px !important;
+            padding-right: 50px !important;
+        }
+        .open-text {
+            padding-bottom: 2px;
+            color: white !important;
         }
     </style>
 </head>
@@ -1561,7 +1577,7 @@
                         <div class="_5r7f _2lki _4ulx">
                             <div class="_2__g _9blw">
                                 <div class="__sw __s- __t3 __ta _80fl padding-r-l">
-                                    <div class="_49wt _4fgg dp-flex">
+                                    <div class="_49wt _4fgg dp-flex border-radius-5">
                                         <div class="img-left">
                                             <img class="img-mes" src="img/mess.png" alt="">
                                         </div>
@@ -1571,26 +1587,28 @@
                                                 </b>
                                             </h2>
                                             <h2 class="_3tmr _9apg font-w-5 mt-2 font-s-15">
-                                                <button type="submit" class="btn btn-primary btn-open">OPEN</button>
+                                                <button type="submit" class="btn btn-primary btn-open">
+                                                    <label class="open-text" for="">OPEN</label>
+                                                </button>
                                                 <label class="_3tmr _9apg font-w-5 mt-2 font-s-15" for="">Case #234857718299001</label>
                                             </h2>
                                         </div>
                                     </div><br><br>
-                                    <div class="_49wt dp-flex">
+                                    <div class="_49wt dp-flex border-radius-5">
                                         <div class="img-left-20 text-center">
-                                            <img class="img-fb" src="img/fb.png" alt="">
+                                            <img class="img-fb" src="img/logo-fb.png" alt="">
                                         </div>
                                         <div>
                                             <h2 class="_3tmr _9apg message mes-header">
                                                 <b>Our Message</b>
                                             </h2>
-                                            <label class="mb-0 lh-20 mt-1">Your page has been schedule for deletion because one or more the following</label>
+                                            <label class="mb-0 lh-20 mt-1">Your page has been schedule for deletion because one or more the following</label><br>
                                             <label class="mb-0 lh-20 mg-l-20">- Intellectual Property Infringement</label><br>
                                             <label class="mb-0 lh-20 mg-l-20">- Community Standards</label><br>
                                             <label class="mb-0 lh-20 mg-l-20">- Hate Speech</label>
                                         </div>
                                     </div><br>
-                                    <div class="_49wt dp-flex">
+                                    <div class="_49wt dp-flex border-radius-5">
                                         <div class="img-left">
                                             <img class="img-avt" src="img/avt.jpeg" alt="">
                                         </div>
